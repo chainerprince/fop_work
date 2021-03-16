@@ -4,17 +4,25 @@
 
 
 int main(){
-    int i,j,k=1,needle;
+    int i,j,k=1,needle,upper=60,lower = 10;
     int array[4][5];
-    printf("Enter the needle: ");
-    scanf("%d",&needle);
+    
 
-    srand(time(NULL));
+ srand(time(NULL));
     for(i=0;i<4;i++){
         for(j=0;j<5;j++){
-            array[i][j] = rand()%60;
+            array[i][j] = (rand() % (upper - lower + 1)) + lower;
         }
     }
+    for(i=0;i<4;i++){
+        for(j=0;j<5;j++){
+            printf("%d\t",array[i][j]);
+        }
+        printf("\n");
+    }
+    
+     printf("Enter the needle: ");
+    scanf("%d",&needle);
     for(i=0;i<4;i++){
         for(j=0;j<5;j++){
             if(array[i][j]<needle){
